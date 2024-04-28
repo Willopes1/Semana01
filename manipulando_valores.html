@@ -1,0 +1,76 @@
+!<meta charset="UTF-8">
+
+<script>
+//Exercício 1
+
+let clientesPorCidade = [120, 220, 95, 180, 75];
+let totalClientes = clientesPorCidade.reduce((total, clientes) => total + clientes, 0);
+let mensagemClientes = "Nas capitais de BH, SP, BA, MS e PR, Jéssica possui " + totalClientes + " clientes.";
+console.log(mensagemClientes);
+
+//Exercício 2
+
+let faturamentoPorCidade = [15360, 72200, 11545, 43290, 5850];
+let mediaFaturamentoPorCliente = faturamentoPorCidade.map((faturamento, index) => {
+    let media = faturamento / clientesPorCidade[index];
+    return "Faturamento médio por cliente em " + getCidadeName(index) + ": R$ " + Math.round(media);
+});
+console.log("Faturamento médio por cliente:");
+mediaFaturamentoPorCliente.forEach(mensagem => console.log(mensagem));
+
+function getCidadeName(index) {
+    switch (index) {
+        case 0: return "Belo Horizonte";
+        case 1: return "São Paulo";
+        case 2: return "Salvador";
+        case 3: return "Campo Grande";
+        case 4: return "Curitiba";
+        default: return "";
+    }
+}
+
+//Exercício 3
+let totalFaturamento = faturamentoPorCidade.reduce((total, faturamento) => total + faturamento, 0);
+let totalClientesGeral = totalClientes;
+let mediaFaturamentoGeral = totalFaturamento / totalClientesGeral;
+let mensagemMediaGeral = "Faturamento médio por cliente nas cinco cidades onde Jéssica mais tem clientes ativos é de R$ " + Math.round(mediaFaturamentoGeral);
+console.log(mensagemMediaGeral);
+
+//Exercício 4
+
+let custoFreteSP = 9;
+let custoFreteOutrosEstados = 14;
+let porcentagemCustoProducao = 0.2;
+
+let lucroPorCidade = faturamentoPorCidade.map((faturamento, index) => {
+    let custoFrete = index === 1 ? custoFreteSP : custoFreteOutrosEstados;
+    let custoProducao = faturamento * porcentagemCustoProducao;
+    let lucro = faturamento - custoFrete - custoProducao;
+    return "Lucro em " + getCidadeName(index) + ": R$ " + Math.round(lucro);
+});
+console.log("Lucro por cidade:");
+lucroPorCidade.forEach(mensagem => console.log(mensagem));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

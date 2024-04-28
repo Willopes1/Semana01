@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    var idade = parseInt(prompt("Digite sua idade"));
+
+    if (idade >= 18 && idade <= 70) {
+        mostra("Como sua idade é " + idade + ", o voto é obrigatório")
+    } else if ((idade < 18 && idade >= 16) || idade > 70) {
+        mostra("Como sua idade é " + idade + ", o voto é opcional")
+    } else if (idade < 16 && idade >= 0) {
+        mostra("Como sua idade é " + idade + ", você não pode votar")
+    } else {
+        mostra("Digite uma idade válida")
+    }
+</script>

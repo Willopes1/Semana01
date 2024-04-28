@@ -1,0 +1,65 @@
+<meta charset="UTF-8">
+
+<script>
+
+
+// Exercício 1
+let pessoa = {
+    nome: "João",
+    idade: 25,
+    CPF: "123.456.789-10",
+    altura: 1.75,
+    maiorDeIdade: true
+};
+console.log(pessoa);
+
+
+
+
+// Exercício 2
+function recebeLetra(lista) {
+    let letra = prompt("Digite uma letra:");
+    if (letra.length === 1 && /^[a-zA-Z]+$/.test(letra)) {
+        lista.push(letra);
+        console.log("Letra adicionada: " + letra);
+    } else {
+        console.log("Por favor, digite apenas uma letra.");
+    }
+}
+
+// Função principal
+function main() {
+    let listaLetras = [];
+
+    console.log("Digite até 10 letras:");
+    for (let i = 0; i < 10; i++) {
+        recebeLetra(listaLetras);
+    }
+
+    console.log("Letras digitadas:");
+    console.log(listaLetras);
+
+    //  Exercicio 3
+    if (listaLetras.length > 0) {
+        console.log("a) A primeira letra digitada: " + listaLetras[0]);
+        if (listaLetras.length >= 4) {
+            console.log("b) A quarta letra digitada: " + listaLetras[3]);
+        }
+        if (listaLetras.length >= 5) {
+            console.log("c) A quinta letra digitada: " + listaLetras[4]);
+        }
+        console.log("d) A última letra digitada: " + listaLetras[listaLetras.length - 1]);
+        console.log("e) O tamanho da lista criada: " + listaLetras.length);
+    } else {
+        console.log("Nenhuma letra foi digitada.");
+    }
+}
+
+// Chamando a função principal
+main();
+
+
+
+
+
+</script>

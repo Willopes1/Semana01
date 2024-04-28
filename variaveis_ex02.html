@@ -1,0 +1,26 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+    var a = 10;
+    var b = 8;
+    mostra("Antes da troca");
+    mostra("a = " + a);
+    mostra("b = " + b);
+
+    var auxiliar = a; //para não perder o valor de a quando ele receber o valor de b
+    a = b;
+    b = auxiliar;
+    mostra("Depois da troca");
+    mostra("a = " + a);
+    mostra("b = " + b);
+
+</script>

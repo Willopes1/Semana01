@@ -1,0 +1,17 @@
+<meta charset = "UTF-8">
+
+<script>
+
+function calcularVolumePiscina(raio, altura) {
+    const PI = 3.14;    
+    let volumeMetrosCubicos = PI * Math.pow(raio, 2) * altura;    
+    let volumeLitros = volumeMetrosCubicos * 1000;
+    return volumeLitros;
+}
+
+let raio = 3.5; 
+let altura = 1.6; 
+let volumePiscina = calcularVolumePiscina(raio, altura);
+
+console.log("O volume da piscina é de aproximadamente " + volumePiscina + " litros.");
+</script>

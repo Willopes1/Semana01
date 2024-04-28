@@ -1,0 +1,68 @@
+<meta charset="UTF-8">
+
+<script>
+// Exercicio 1
+function brlToNzd(valorBRL) {
+    const taxaCambio = 3.25; 
+    return valorBRL / taxaCambio;
+}
+function brlToThb(valorBRL) {
+    const taxaCambio = 0.15; 
+    return valorBRL / taxaCambio;
+}
+function brlToCrc(valorBRL) {
+    const taxaCambio = 0.0089; 
+    return valorBRL / taxaCambio;
+}
+function exibirValoresConvertidos(destino, passagens, diariaHotel, guiaLocal) {
+    console.log(`\n🌏 Destino: ${destino}`);
+    console.log(`Passagens aéreas: R$ ${passagens.toFixed(2)}`);
+    console.log(`Diária hotel: ${diariaHotel}`);
+    console.log(`Guia local: ${guiaLocal}`);
+    console.log(`→ Total em ${destino}: R$ ${(passagens + diariaHotel + guiaLocal).toFixed(2)}`);
+}
+
+exibirValoresConvertidos("Nova Zelândia", brlToNzd(13996), 79.15, 200);
+exibirValoresConvertidos("Tailândia", brlToThb(9160), 590, 235);
+exibirValoresConvertidos("Costa Rica", brlToCrc(5119), 2300, 3150);
+
+// Excercicio 2
+function enviarEmailCliente(nome, destino, passagens, diariaHotel, guiaLocal, dias) {
+    const totalViagem = passagens + diariaHotel * dias + guiaLocal;
+    console.log(`\nOlá, ${nome}! É um prazer tê-lo(a) como cliente e estamos ansiosos para que sua viagem a ${destino} ocorra em breve!`);
+    console.log(`Estou te encaminhando os orçamentos:`);
+    console.log(`  * ${destino} *`);
+    console.log(`Passagens: R$ ${passagens.toFixed(2)}`);
+    console.log(`Acomodação (${dias} dias) de R$ ${(diariaHotel * dias).toFixed(2)}`);
+    console.log(`O guia local custará R$ ${guiaLocal.toFixed(2)}`);
+    console.log(`Total R$ ${totalViagem.toFixed(2)}`);
+}
+
+enviarEmailCliente("Fulana", "Nova Zelândia", brlToNzd(13996), 79.15, 200, 5);
+
+// Exercicio 3
+function inputDadosViaPrompt() {
+    const destino1 = prompt("Informe o primeiro destino:");
+    const passagens1 = parseFloat(prompt("Informe o valor das passagens aéreas (em BRL):"));
+    const diariaHotel1 = parseFloat(prompt("Informe o valor da diária do hotel (em moeda local):"));
+    const guiaLocal1 = parseFloat(prompt("Informe o valor do guia local (em moeda local):"));
+
+    const destino2 = prompt("Informe o segundo destino:");
+    const passagens2 = parseFloat(prompt("Informe o valor das passagens aéreas (em BRL):"));
+    const diariaHotel2 = parseFloat(prompt("Informe o valor da diária do hotel (em moeda local):"));
+    const guiaLocal2 = parseFloat(prompt("Informe o valor do guia local (em moeda local):"));
+
+    const destino3 = prompt("Informe o terceiro destino:");
+    const passagens3 = parseFloat(prompt("Informe o valor das passagens aéreas (em BRL):"));
+    const diariaHotel3 = parseFloat(prompt("Informe o valor da diária do hotel (em moeda local):"));
+    const guiaLocal3 = parseFloat(prompt("Informe o valor do guia local (em moeda local):"));
+
+    exibirValoresConvertidos(destino1, passagens1, diariaHotel1, guiaLocal1);
+    exibirValoresConvertidos(destino2, passagens2, diariaHotel2, guiaLocal2);
+    exibirValoresConvertidos(destino3, passagens3, diariaHotel3, guiaLocal3);
+}
+
+inputDadosViaPrompt();
+
+
+</script>

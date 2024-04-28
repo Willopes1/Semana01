@@ -1,0 +1,38 @@
+
+<meta charset="UTF-8">
+
+<script>
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+    }
+
+    function concatena(nome, telefone, convenioMedico, profissao, salario) {
+        //concatenando as variáveis
+        var profissional = nome + ", cujo telefone é " + telefone + ", exerce a função de " + profissao + ", com salário de " + salario;
+        //coloquei para exibir na tela para poder ver o resultado
+        mostra(profissional);
+        //verificando se tem convênio médico
+        if (convenioMedico) {
+            mostra(", e possui convênio médico.");
+        } else {
+            mostra(", e não possui convênio médico.");
+        }
+    }
+
+    //essas são as variáveis que podem ser alteradas para concatenar o texto
+    var nome = "Fulano";
+    var telefone = "9999-9999";
+    var convenioMedico = false;
+    var profissao = "programador";
+    var salario = 1234.00;
+
+    //chamada da função de concatenar
+    concatena(nome, telefone, convenioMedico, profissao, salario)
+
+</script>
+
+</html>

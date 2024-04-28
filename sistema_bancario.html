@@ -1,0 +1,34 @@
+<meta charset="UTF=8">
+<script>
+
+var senhaCorreta = "1234";
+var tentativas = 0;
+
+while (tentativas < 3) {
+    var senha  = prompt("Digite a senha do cartão:");
+    if (senha === senhaCorreta) {
+        console.log("Senha correta. Cartão desbloqueado");
+        break;
+    } else {
+        tentativas++;
+        console.log("Senha incorreta. Tentativa" + tentativas + "de 3");
+
+    }
+
+if (tentativas === 3) {
+    var opcao = prompt("Senha incorreta por 3 vezes. Cartão bloqueado. Digite 'A' para ir a uma agência ou 'D' para desbloquear com a chave de segurança:");
+    if (opcao === "A") {
+        console.log("Será um prazer atendê-la em uma agência.");
+     } else if (opcao === "D") {
+            var chaveSeguranca = prompt("Digite a chave de segurança");
+            
+            if (chaveSeguranca === "9999") {
+                console.log("Chave de Segurança correta. Por favor,redefina sua senha.");
+            } else {
+                console.log("Chave de Segurança Incorreta. Por favor, dirija-se a uma agência.");
+            }
+            }
+            
+        }
+    }
+</script>

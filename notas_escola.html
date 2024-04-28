@@ -1,0 +1,85 @@
+
+<meta charset="UTF-8">
+<script>
+
+function calcularMediaTurma() {
+    var notas = [];
+    var nota;
+    
+    alert("Insira as notas de seus alunos. Quando acabar digite 'SAIR'");
+    
+    
+    while (true) {
+        nota = prompt("Digite a nota do aluno:");
+        if (nota === "SAIR") {
+            break;
+        }
+        notas.push(parseFloat(nota)); 
+    }
+    
+    
+    var soma = 0;
+    for (var i = 0; i < notas.length; i++) {
+        soma += notas[i];
+    }
+    var media = soma / notas.length;
+    
+    alert("A média da turma é: " + media.toFixed(2));
+}
+
+
+calcularMediaTurma();
+
+// Exercicio 2
+
+function calcularMediaAluno(notaProva, notaTrabalho) {
+    return (notaProva + notaTrabalho) / 2;
+}
+
+function enviarEmailDiretoria(nomeAluno, disciplina, media) {
+    if (media < 7.0) {
+        console.log(`Aluno: ${nomeAluno}\nDisciplina: ${disciplina}\nMédia do bimestre: ${media}`);
+        
+    }
+}
+
+var nomeAluno = "Maria";
+var disciplina = "Matemática";
+var notaProva = 8.0;
+var notaTrabalho = 6.5;
+
+var mediaAluno = calcularMediaAluno(notaProva, notaTrabalho);
+console.log(`A média do aluno ${nomeAluno} na disciplina de ${disciplina} é: ${mediaAluno}`);
+
+enviarEmailDiretoria(nomeAluno, disciplina, mediaAluno);
+
+
+// Exercicio 3
+
+
+function escolherLider(nomeAluno1, mediaPortugues1, mediaMatematica1,
+                       nomeAluno2, mediaPortugues2, mediaMatematica2,
+                       nomeAluno3, mediaPortugues3, mediaMatematica3) {
+    var mediaGeral1 = (mediaPortugues1 + mediaMatematica1) / 2;
+    var mediaGeral2 = (mediaPortugues2 + mediaMatematica2) / 2;
+    var mediaGeral3 = (mediaPortugues3 + mediaMatematica3) / 2;
+    
+    var lider;
+    
+    
+    if (mediaGeral1 >= mediaGeral2 && mediaGeral1 >= mediaGeral3) {
+        lider = nomeAluno1;
+    } else if (mediaGeral2 >= mediaGeral1 && mediaGeral2 >= mediaGeral3) {
+        lider = nomeAluno2;
+    } else {
+        lider = nomeAluno3;
+    }
+    
+    return lider;
+}
+
+
+var lider = escolherLider("João", 8.5, 7.0, "Maria", 7.5, 8.0, "Carlos", 7.0, 8.5);
+console.log(`O líder da turma é: ${lider}`);
+
+</script>

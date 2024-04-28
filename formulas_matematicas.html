@@ -1,0 +1,21 @@
+<meta charset="UTF-8">
+<h1>Verifique a resposta no console</h1>
+
+<script>
+
+    var baseRetangulo = 40;
+    var alturaRetangulo = 20;
+    var baseTriangulo = 25;
+    var alturaTriangulo = 10;
+    var raio = 3;
+
+    var areaRetangulo = baseRetangulo * alturaRetangulo;
+    var areaCirculo = Math.round(Math.PI * Math.pow(raio, 2));//round para arredondar e pow para fazer a potência
+    var areaTriangulo = (baseTriangulo * alturaTriangulo) / 2;
+
+    //Os resultados só aparecem no console
+    console.log("Área do Retângulo: " + areaRetangulo);
+    console.log("Área do Circulo: " + areaCirculo);
+    console.log("Área do Triângulo: " + areaTriangulo);
+
+</script>
